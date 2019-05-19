@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RESTful API 之 To Do Item 列表</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+<div>
+    <input type="text" id="content" placeholder="新项目内容">
+    <button onclick="addNewItem(event)">添加项目</button>
+    <input type="text" id="toDoItemContent" placeholder="选中任务详情" onchange="updateContent(event)">
+    <button onclick="updateToDoItem(selectedId, document.getElementById('toDoItemContent').value)">修改</button>
+    <span id="msg"></span>
+</div>
+
+<div>
+    <table border="1px solid black">
+        <caption>
+            <h1>
+                任务列表
+            </h1>
+        </caption>
+        <thead>
+        <tr>
+            <th style="width: 5em;">任务标识</th>
+            <th style="width: 15em;">创建时间</th>
+            <th style="width: 20em;">任务内容</th>
+            <th style="width: 5em;">任务选项</th>
+        </tr>
+        </thead>
+        <tbody id="table">
+
+        </tbody>
+    </table>
+
+
+</div>
+
+<script src="/lib/axios.js"></script>
+<script src="/lib/index.js"></script>
+</body>
+</html>
